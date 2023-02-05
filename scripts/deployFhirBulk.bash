@@ -664,7 +664,9 @@ echo "Creating FHIR Bulk Loader & Export Function Application"
 	# Create Service Plan
 	#
 	echo "Creating FHIR Loader Function App Serviceplan ["$deployPrefix$serviceplanSuffix"]..."
-	stepresult=$(az appservice plan create -g  $resourceGroupName -n $deployPrefix$serviceplanSuffix --number-of-workers $functionWorkers --sku $functionSKU --tags $TAG)
+	#stepresult=$(az appservice plan create -g  $resourceGroupName -n $deployPrefix$serviceplanSuffix --number-of-workers $functionWorkers --sku $functionSKU --tags $TAG)
+	# becheng 5-Feb-23: changed to use function premium plans, e.g. EP1            
+	stepresult=$(az functionapp plan create -g $resourceGroupName -n $deployPrefix$serviceplanSuffix --number-of-workers $functionWorkers --sku $functionSKU --tags $TAG)
 	
 	# Create the function app
 	echo "Creating FHIR Bulk Loader & Export Function App ["$bulkAppName"]..."
