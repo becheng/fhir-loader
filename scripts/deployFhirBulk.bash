@@ -20,7 +20,7 @@ IFS=$'\n\t'
 # HealthArchitecture Deployment Settings 
 #########################################
 declare TAG="HealthArchitectures = FHIRBulk"
-declare functionSKU="B1"
+declare functionSKU="EP1"
 declare functionWorkers="2"
 declare storageSKU="Standard_LRS"
 
